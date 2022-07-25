@@ -6,6 +6,7 @@ import th.ac.ku.menu.model.Menu;
 import th.ac.ku.menu.service.MenuService;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/menu")
@@ -19,8 +20,15 @@ public class MenuController {
         return service.getAll();
     }
 
+    @GetMapping
+    public Menu getMenuById(@PathVariable UUID id){
+        return service.getMenuById(id);
+    }
+
     @PostMapping
     public Menu create(@RequestBody Menu menu) {
         return service.create(menu);
     }
+
+
 }

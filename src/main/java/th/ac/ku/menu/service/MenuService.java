@@ -6,6 +6,7 @@ import th.ac.ku.menu.model.Menu;
 import th.ac.ku.menu.repository.MenuRepository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class MenuService {
@@ -20,5 +21,9 @@ public class MenuService {
     public Menu create(Menu menu){
         Menu record = menuRepository.save(menu);
         return record;
+    }
+
+    public Menu getMenuById(UUID id){
+        return menuRepository.findById(id).get();
     }
 }
