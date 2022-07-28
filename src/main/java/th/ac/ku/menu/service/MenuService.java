@@ -44,4 +44,13 @@ public class MenuService {
         return record;
     }
 
+    public Menu getMenuByName(String name) {
+        return menuRepository.findByName(name);
+    }
+
+    public List<Menu> getMenuByCategory(String category) {
+        return menuRepository.findByCategory(category);
+    }
+
+
 }

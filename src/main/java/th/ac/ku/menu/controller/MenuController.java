@@ -40,4 +40,15 @@ public class MenuController {
         return service.delete(id);
     }
 
+    @GetMapping("/name/{name}")
+    public Menu getMenuByName(@PathVariable String name) {
+        return service.getMenuByName(name);
+    }
+
+    @GetMapping("/category/{category}")
+    public List<Menu> getMenuByCategory(@PathVariable String category) {
+        return service.getMenuByCategory(category);
+    }
+
+
 }
