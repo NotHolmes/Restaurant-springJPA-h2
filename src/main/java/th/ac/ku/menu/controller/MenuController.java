@@ -20,7 +20,7 @@ public class MenuController {
         return service.getAll();
     }
 
-    @GetMapping
+    @GetMapping("/{id}")
     public Menu getMenuById(@PathVariable UUID id){
         return service.getMenuById(id);
     }
