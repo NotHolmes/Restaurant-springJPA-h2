@@ -34,5 +34,10 @@ public class MenuController {
     public Menu update(@RequestBody Menu menu) {
         return service.update(menu);
     }
-    
+
+    @DeleteMapping("/{id}")
+    public Menu delete(@PathVariable UUID id) {
+        return service.delete(id);
+    }
+
 }

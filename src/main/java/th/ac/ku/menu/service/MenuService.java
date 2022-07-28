@@ -38,4 +38,10 @@ public class MenuService {
         return record;
     }
 
+    public Menu delete(UUID id) {
+        Menu record = menuRepository.findById(id).get();
+        menuRepository.deleteById(id);
+        return record;
+    }
+
 }
