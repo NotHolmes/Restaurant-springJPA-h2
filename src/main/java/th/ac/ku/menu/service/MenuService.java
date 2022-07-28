@@ -26,4 +26,16 @@ public class MenuService {
     public Menu getMenuById(UUID id){
         return menuRepository.findById(id).get();
     }
+
+    public Menu update(Menu requestBody) {
+        UUID id = requestBody.getId();
+        Menu record = menuRepository.findById(id).get();
+        record.setName(requestBody.getName());
+        record.setPrice(requestBody.getPrice());
+        record.setCategory(requestBody.getCategory());
+
+        record = menuRepository.save(record);
+        return record;
+    }
+
 }

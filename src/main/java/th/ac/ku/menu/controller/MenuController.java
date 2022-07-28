@@ -30,5 +30,9 @@ public class MenuController {
         return service.create(menu);
     }
 
-
+    @PutMapping
+    public Menu update(@RequestBody Menu menu) {
+        return service.update(menu);
+    }
+    
 }
